@@ -26,11 +26,17 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ElevatedButton(
-        onPressed: () {
-          Navigator.pushNamed(context, '/second');
-        },
-        child: Text('Second Page'),
+      appBar: AppBar(
+        title: const Text('Home Page'),
+        backgroundColor: Colors.red,
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.pushNamed(context, '/');
+          },
+          child: Text('Second Page'),
+        ),
       ),
     );
   }
@@ -41,6 +47,19 @@ class SecondPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Second Page'),
+        backgroundColor: Colors.red,
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.pushNamed(context, '/second');
+          },
+          child: Text('Second Page'),
+        ),
+      ),
+    );
   }
 }
